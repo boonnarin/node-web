@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="css/stys.css">
+    <title>non-laboratory</title>
+    <style>
+    </style>
+
+</head>
+
+
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <img src="images/logo.png" alt="Logo">
+            <img src="images/Logo_su.png" alt="Logo_su" style="width: 60px; height: auto;">
+            <div class="header-text">
+                <div class="header-title">Computer-Based Technology in Enhancing Cardiovascular Disease Risk Assessment
+                </div>
+                <div class="header-subtitle">by Phramongkutklao College of Medicine & Silpakorn University</div>
+            </div>
+        </div>
+        <div class="right-buttons">
+            <div class="dropdown">
+                <div class="dropdown-content">
+                    <a href="index.html">หน้าเเรก</a>
+                    <a href="aboutMe.html">About Me</a>
+                    <a href="#">Link 3</a>
+                </div>
+                <button>&#8942;</button> <!-- Vertical ellipsis icon -->
+            </div>
+            <button class="login-button">Login</button>
+        </div>
+    </header>
+    <main>
+        <div id=form1>
+            <div id="form-bk">
+                <form id="stataFormNon">
+                    <div class="mb-3 mt-3">
+                        <h2>การประเมินความเสี่ยงโรคหัวใจและหลอดเลือดแบบไม่ใช้ผลการตรวจเลือด</h2>
+                        <h3>Non-Laboratory-based predicted 10-year CVD Risk (The 2019 WHO CVD Risk Charts)</h3>
+                        <div class="form-group">
+                            <label for="name">ชื่อ (name) :</label>
+                            <input type="text" id="name" name="name" class="radio-option" placeholder="ไม่จำเป็นต้องกรอก (no required)" style="width:260px ;" >
+                            <label for="lastname">นามสกุล (surname) :</label>
+                            <input type="text" id="lastname" name="lastname" placeholder="ไม่จำเป็นต้องกรอก (no required) " style="width:260px ;">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cvsex" class="radio-option">เพศ (sex) :</label>
+                            <input type="radio" id="male" name="cvsex" value="1" required>
+                            <label for="male" class="radio-option">ชาย (man) </label>
+                            <input type="radio" id="female" name="cvsex" value="0" required>
+                            <label for="female">หญิง (woman) </label>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="age">อายุ (age):</label>
+                            <input type="number" id="age" name="age" min="39" class="radio-option" required>
+                            <label>ปี (years)</label>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cvsmk" class="radio-option">ปัจจุบันสูบบุหรี่ (current smoking) :</label>
+                            <input type="radio" id="cvsmky" name="cvsmk" value="1" required>
+                            <label for="yes" class="radio-option">สูบ (yes) </label>
+                            <input type="radio" id="cvsmkn" name="cvsmk" value="0" required>
+                            <label for="no">ไม่สูบ (no) </label>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="weight">น้ำหนัก (weight) :</label>
+                            <input type="number" id="weight" name="weight" min="1" class="radio-option" required><label class="radio-option"> กิโลกรัม (kg)</label>
+
+                            <label for="height_cm" >ส่วนสูง (height):</label>
+                            <input type="number" id="height_cm" name="height_cm" min="1" class="radio-option" required><label>เซนติเมตร (cm)</label>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="sbp">ระดับความดันโลหิตค่าบน ครั้งที่ 1 (1st Systolic blood pressure) :</label>
+                            <input type="number" id="sbp1" name="sbp1" min="" required
+                                class="radio-option"><label>มิลลิเมตรปรอท
+                                (mmHg)</label>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="sbp">ระดับความดันโลหิตค่าบน ครั้งที่ 2 (2nd Systolic blood pressure) :</label>
+                            <input type="number" id="sbp2" name="sbp2" min="" required
+                                class="radio-option"><label>มิลลิเมตรปรอท
+                                (mmHg)</label>
+                        </div>
+
+                    </div>
+                    <script src="js/script_nonlab.js"></script>
+                    <div>
+                        <button type="button" class="btn btn-success" id="callab" onclick="nonlab()"
+                            style="float: right;">แสดงผลการประเมินความเสี่ยง (CVD Risk Assessment)</button>
+                        <a href="index.html" class="btn btn-success" id="callab" style="float: left;">กลับหน้าแรก</a>
+
+
+                    </div>
+                    <div class="button-container" style="text-align: left;">
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>ความเสี่ยงต่อการป่วยหรือเสียชีวิตจากโรคหัวใจและหลอดเลือด เช่น
+                กล้ามเนื้อหัวใจขาดเลือดและโรคเส้นเลือดสมองตีบในระยะ 10 ปีข้างหน้า
+                สำหรับผู้ที่ไม่เคยมีประวัติการป่วยด้วยโรคกล้ามเนื้อหัวใจขาดเลือดและโรคเส้นเลือดสมองตีบมาก่อน โดย
+                การประเมินความเสี่ยงใช้ 2019 World Health Organization cardiovascular disease risk charts สำหรับ
+                Southeast
+                Asia Countries<sup>1</sup>.</p>
+            <p><sup>1</sup> WHO CVD Risk Chart Working Group (2019). World Health Organization cardiovascular
+                disease
+                risk
+                charts: revised models to estimate risk in 21 global regions. The Lancet. Global health, 7(10),
+                e1332–e1345.
+                <a href="https://doi.org/10.1016/S2214-109X(19)30318-3"
+                    target="_blank">https://doi.org/10.1016/S2214-109X(19)30318-3</a>
+            </p>
+        </div>
+    </footer>
+
+
+
+
+
+
+</body>
+
+</html>
