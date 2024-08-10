@@ -118,6 +118,9 @@
 
     <div class="container">
         <form>
+            <h2 style="font-size: 28px;">การประเมินความเสี่ยงโรคหัวใจและหลอดเลือดแบบไม่ใช้ผลการตรวจเลือด</h2>
+            <h3 style="font-size: 22px;">Non-Laboratory-based predicted 10-year CVD Risk (The 2019 WHO CVD Risk Charts)
+            </h3>
             <div class="form-row">
                 <div class="form-group">
                     <label for="name">Name </label>
@@ -125,24 +128,27 @@
                         placeholder="ไม่จำเป็นต้องกรอก (no required)">
                 </div>
                 <div class="form-group">
-                    <label for="lastname">surname &nbsp;</label>
+                    <label for="lastname">Surname &nbsp;</label>
                     <input type="text" id="lastname" name="lastname" placeholder="ไม่จำเป็นต้องกรอก (no required)">
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="form-group">
-                    <label for="cvsex">Gender (เพศ)<span class="required">*</span></label>
+                    <label for="cvsex">Sex (เพศ)<span class="required">*</span></label>
                     <select id="cvsex" name="cvsex">
-                        <option value="">Select Gender</option>
+                        <option value="">Select Sex</option>
                         <option value="1">Male (ชาย)</option>
                         <option value="0">Female (หญิง)</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="age">Age (ปี)<span class="required">*</span></label>
-                    <input type="number" id="age" name="age" min="39" placeholder="อายุ">
+                    <!-- <label for="age">Age (อายุ)<span class="required">*</span></label> -->
+                    <label for="birthYear">BirthYear (ปีเกิด) <span class="required">*</span></label>
+                    <!-- <input type="number" id="age" name="age" min="39" placeholder="อายุ"> -->
+                    <input type="number" id="birthYear" name="birthYear" placeholder="โปรดกรอกเป็นปี พ.ศ." required>
+                    <div class="note">กรอกเป็นปี พ.ศ.</div>
                 </div>
             </div>
 
@@ -151,8 +157,8 @@
                     <label for="cvsmk">Current smoking (ปัจจุบันสูบบุหรี่) <span class="required">*</span></label>
                     <select id="cvsmk" name="cvsmk">
                         <option value="">Select </option>
-                        <option id="cvsmky" name="cvsmk" value="1">yes(สูบ)</option>
-                        <option id="cvsmkn" name="cvsmk" value="0">No(ไม่สูบ)</option>
+                        <option id="cvsmky" name="cvsmk" value="1">yes (สูบ)</option>
+                        <option id="cvsmkn" name="cvsmk" value="0">No (ไม่สูบ)</option>
 
                     </select>
                 </div>
@@ -180,11 +186,13 @@
                 <div class="form-group">
                     <label for="weight">Weight (น้ำหนัก) <span class="required">*</span></label>
                     <input type="number" id="weight" name="weight" min="1" placeholder="น้ำหนัก " required>
+                    <div class="note">กิโลกรัม (kg)</div>
                 </div>
 
                 <div class="form-group">
                     <label for="height_cm">Height (ส่วนสูง) <span class="required">*</span></label>
                     <input type="number" id="height_cm" name="height_cm" min="1" placeholder="ส่วนสูง " required>
+                    <div class="note">เซนติเมตร (cm)</div>
                 </div>
             </div>
 
