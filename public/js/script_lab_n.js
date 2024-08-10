@@ -5,17 +5,15 @@ function generateStataCode() {
     var name = document.getElementById("name").value;
     var lastname = document.getElementById("lastname").value;
     var cvsex = document.getElementById("cvsex").value;
-    console.log(cvsex);  // 1 หรือ 0 ขึ้นอยู่กับการเลือก
+   
     // var cvsmk = document.querySelector('input[name="cvsmk"]:checked').value;
     var cvsmk = document.getElementById("cvsmk").value;
-    console.log(cvsmk);  // 1 หรือ 0 ขึ้นอยู่กับการเลือก
+    
     
     // var cvdm = document.querySelector('input[name="cvdm"]:checked').value;
     var cvdm = document.getElementById("cvdm").value;
-    console.log(cvdm);  // 1 หรือ 0 ขึ้นอยู่กับการเลือก
     
     
-    var age = document.getElementById('age').value;
     //tc
     var tc = parseFloat(document.getElementById('tc').value);
     var tccal = (tc * 0.02586);
@@ -25,8 +23,10 @@ function generateStataCode() {
     var sbp = ((sbp1 + sbp2) / 2);
 
     //age
-    var age = document.getElementById('age').value;
-
+    // var age = document.getElementById('age').value;
+    const birthYear = document.getElementById('birthYear').value;
+    const currentYear = new Date().getFullYear() + 543;
+    const age = currentYear - birthYear;
     //หยุดการทำงานหากข้อมูลไม่ครบ
     if (!cvsex || !cvsmk || !cvdm || !tc || !sbp1 || !sbp2 || !age) {
         alert("โปรดกรอกข้อมูลให้ครบทุกช่อง");
