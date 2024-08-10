@@ -2,11 +2,13 @@ document.getElementById("callab").addEventListener("click", function () {
     nonlab();
 });
 function nonlab() {
+
     var name = document.getElementById("name").value;
     var lastname = document.getElementById("lastname").value;
     var cvsex = document.getElementById("cvsex").value;
     var cvsmk = document.getElementById("cvsmk").value;
-    var age = document.getElementById('age').value;
+
+
     //คำนวนbmi
     var weight = document.getElementById('weight').value;
     var height = document.getElementById('height_cm').value / 100;
@@ -16,7 +18,16 @@ function nonlab() {
     var sbp = ((sbp1 + sbp2) / 2);
 
     //age
-    var age = document.getElementById('age').value;
+    // var age = document.getElementById('age').value;
+    const birthYear = document.getElementById('birthYear').value;
+    const currentYear = new Date().getFullYear() + 543;
+    const age = currentYear - birthYear;
+
+    // if (age >= 0 && age <= 120) {
+    //     document.getElementById('result').textContent = `อายุของคุณคือ ${age} ปี`;
+    // } else {
+    //     document.getElementById('result').textContent = "กรุณากรอกปีเกิดที่ถูกต้อง";
+    // }
 
     // คำนวณค่า BMI
     var bmi = (weight / (height * height)).toFixed(2);
