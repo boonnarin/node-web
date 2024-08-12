@@ -23,10 +23,10 @@ function generateStataCode() {
     var sbp = ((sbp1 + sbp2) / 2);
 
     //age
-    // var age = document.getElementById('age').value;
-    const birthYear = document.getElementById('birthYear').value;
-    const currentYear = new Date().getFullYear() + 543;
-    const age = currentYear - birthYear;
+     var age = document.getElementById('age').value;
+    // const birthYear = document.getElementById('birthYear').value;
+    // const currentYear = new Date().getFullYear() + 543;
+    // const age = currentYear - birthYear;
     //หยุดการทำงานหากข้อมูลไม่ครบ
     if (!cvsex || !cvsmk || !cvdm || !tc || !sbp1 || !sbp2 || !age) {
         alert("โปรดกรอกข้อมูลให้ครบทุกช่อง");
