@@ -14,13 +14,55 @@
     <script> src = "https://github.com/parallax/jsPDF.git"</script>
     <script src='../node_modules/pdfmake/build/pdfmake.min.js'></script>
     <script src='../node_modules/pdfmake/build/vfs_fonts.js'></script>
-    <link rel="stylesheet" href="css/stys.css">
+    <!-- <link rel="stylesheet" href="css/stys.css"> -->
+    <link rel="stylesheet" href="css/styles.css">
     <title>Results</title>
     <script>
         function goBack() {
             window.history.back();
         }
     </script>
+    <style>
+        #form-bk {
+            width: 80%;
+            /* กำหนดความกว้างเป็น 80% ของพื้นที่ส่วนหนึ่ง */
+            max-width: 1200px;
+            /* กำหนดความกว้างสูงสุดเป็น 800px */
+            margin: 0 auto;
+            /* จัดวางให้อยู่กึ่งกลางตามแนวนอน */
+            padding: 20px;
+            /* เพิ่มระยะขอบซ้ายและขวา */
+            background-color: #f0f0f0;
+            /* กำหนดสีพื้นหลัง */
+            border-radius: 10px;
+            /* เพิ่มขอบมนเม็ด */
+        }
+
+        #form1 {
+            display: flex;
+            justify-content: center;
+        }
+
+
+        .content {
+            max-width: 800px;
+
+            margin: 0 auto;
+            /* Center content horizontally */
+            padding: 20px;
+            /* Add padding for better readability */
+
+        }
+
+        .content p {
+            margin-top: 0;
+        }
+
+        .content ul {
+            padding-left: 20px;
+            /* Add left padding for better indentation */
+        }
+    </style>
 </head>
 
 <body>
@@ -48,7 +90,7 @@
     </header>
     <main>
         <div id="form1">
-            <div id="form-bk">      
+            <div id="form-bk">
                 <h2>แสดงผลการประเมินความเสี่ยง</h2>
                 <div id="result">
                     <script src="js/scriptpdfNon.js"></script>
@@ -217,7 +259,7 @@
             </div>
 
         </div>
-        <div id="form1">
+        <div id="form1" style="margin-bottom: 20px;">
             <form>
                 <button type="button" class="btn btn-success" onclick="goBack()"
                     style="margin-top: 10px;">ย้อนกลับ</button>
