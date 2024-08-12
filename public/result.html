@@ -14,13 +14,55 @@
     <script> src = "https://github.com/parallax/jsPDF.git"</script>
     <script src='../node_modules/pdfmake/build/pdfmake.min.js'></script>
     <script src='../node_modules/pdfmake/build/vfs_fonts.js'></script>
-    <link rel="stylesheet" href="css/stys.css">
+    <!-- <link rel="stylesheet" href="css/stys.css"> -->
+    <link rel="stylesheet" href="css/styles.css">
     <title>Results</title>
     <script>
         function goBack() {
             window.history.back();
         }
     </script>
+    <style>
+        #form-bk {
+            width: 80%;
+            /* กำหนดความกว้างเป็น 80% ของพื้นที่ส่วนหนึ่ง */
+            max-width: 1200px;
+            /* กำหนดความกว้างสูงสุดเป็น 800px */
+            margin: 0 auto;
+            /* จัดวางให้อยู่กึ่งกลางตามแนวนอน */
+            padding: 20px;
+            /* เพิ่มระยะขอบซ้ายและขวา */
+            background-color: #f0f0f0;
+            /* กำหนดสีพื้นหลัง */
+            border-radius: 10px;
+            /* เพิ่มขอบมนเม็ด */
+        }
+
+        #form1 {
+            display: flex;
+            justify-content: center;
+        }
+
+
+        .content {
+            max-width: 800px;
+
+            margin: 0 auto;
+            /* Center content horizontally */
+            padding: 20px;
+            /* Add padding for better readability */
+
+        }
+
+        .content p {
+            margin-top: 0;
+        }
+
+        .content ul {
+            padding-left: 20px;
+            /* Add left padding for better indentation */
+        }
+    </style>
 </head>
 
 <body>
@@ -135,15 +177,15 @@
                         if (sbp < 120) {
                             ysbp = "- <b>ระดับความดันโลหิตของท่านอยู่ในระดับเหมาะสม (optimal)</b>";
                             ysbpp = "ระดับความดันโลหิตของท่านอยู่ในระดับเหมาะสม (optimal)";
-                            
+
                         } else if (sbp >= 120 && sbp < 130) {
                             ysbp = "- <b>ระดับความดันโลหิตของท่านอยู่ในระดับปกติ (normal)</b>";
                             ysbpp = "ระดับความดันโลหิตของท่านอยู่ในระดับปกติ (normal)";
-                            
+
                         } else if (sbp >= 130 && sbp <= 140) {
                             ysbp = "- <b>ระดับความดันโลหิตของท่านเริ่มสูงเล็กน้อย (high normal)</b> ควรลดการรับประทานอาหารเค็ม เช่น เกลือ น้ำปลา ปลาร้า อาหารหมักดอง อาหารแปรรูป ควรรับประทานผักผลไม้เป็นประจำ";
                             ysbpp = "- ระดับความดันโลหิตของท่านเริ่มสูงเล็กน้อย (high normal) ควรลดการรับประทานอาหารเค็ม เช่น เกลือ น้ำปลา ปลาร้า อาหารหมักดอง อาหารแปรรูป ควรรับประทานผักผลไม้เป็นประจำ"
-                            
+
                         } else if (sbp >= 140 && sbp < 160) {
                             ysbp = "- <b>ท่านมีความดันโลหิตสูง ระดับที่ 1 (Grade 1 Hypertension)</b> หากเคยได้รับการวินิจฉัยโรคความดันโลหิตสูงอยู่แล้ว ให้รับประทานยารักษาตามแพทย์แนะนำและไปติดตามการรักษาตามนัดอย่างสม่ำเสมอ หากยังไม่เคยเข้ารับการรักษาให้ไปพบแพทย์เพื่อทำการตรวจวินิจฉัยและเข้ารับการรักษาต่อเนื่อง ควรลดการรับประทานอาหารเค็ม เช่น เกลือ น้ำปลา ปลาร้า อาหารหมักดอง อาหารแปรรูป ควรรับประทานผักผลไม้เป็นประจำ";
                             ysbpp = "- ท่านมีความดันโลหิตสูง ระดับที่ 1 (Grade 1 Hypertension) หากเคยได้รับการวินิจฉัยโรคความดันโลหิตสูงอยู่แล้ว ให้รับประทานยารักษาตามแพทย์แนะนำและไปติดตามการรักษาตามนัดอย่างสม่ำเสมอ หากยังไม่เคยเข้ารับการรักษาให้ไปพบแพทย์เพื่อทำการตรวจวินิจฉัยและเข้ารับการรักษาต่อเนื่อง ควรลดการรับประทานอาหารเค็ม เช่น เกลือ น้ำปลา ปลาร้า อาหารหมักดอง อาหารแปรรูป ควรรับประทานผักผลไม้เป็นประจำ";
@@ -232,7 +274,7 @@
             </div>
 
         </div>
-        <div id="form1">
+        <div id="form1" style="margin-bottom: 20px;">
             <form>
                 <button type="button" class="btn btn-success" onclick="goBack()"
                     style="margin-top: 10px;">ย้อนกลับ</button>
