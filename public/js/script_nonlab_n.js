@@ -18,10 +18,10 @@ function nonlab() {
     var sbp = ((sbp1 + sbp2) / 2);
 
     //age
-    // var age = document.getElementById('age').value;
-    const birthYear = document.getElementById('birthYear').value;
-    const currentYear = new Date().getFullYear() + 543;
-    const age = currentYear - birthYear;
+     var age = document.getElementById('age').value;
+    // const birthYear = document.getElementById('birthYear').value;
+    // const currentYear = new Date().getFullYear() + 543;
+    // const age = currentYear - birthYear;
 
     // if (age >= 0 && age <= 120) {
     //     document.getElementById('result').textContent = `อายุของคุณคือ ${age} ปี`;
