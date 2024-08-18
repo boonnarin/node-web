@@ -255,15 +255,15 @@
 
                         var statascol = "";
 
-                        if (stataCode <= 5) {
+                        if (stataCode < 5) {
                             statascol = "<span style='background-color: green; color: white; padding: 10px; display: inline-block; vertical-align: middle; line-height: 1.5; white-space: nowrap;'>เสี่ยงน้อยมาก</span>";
-                        } else if (stataCode > 5 && stataCode <= 10) {
+                        } else if (stataCode >= 5 && stataCode < 10) {
                             statascol = "<span style='background-color: lightgreen; padding: 10px; display: inline-block; vertical-align: middle; line-height: 1.5; white-space: nowrap;'>เสี่ยงน้อย</span>";
-                        } else if (stataCode > 10 && stataCode <= 20) {
+                        } else if (stataCode >= 10 && stataCode < 20) {
                             statascol = "<span style='background-color: yellow; padding: 10px; display: inline-block; vertical-align: middle; line-height: 1.5; white-space: nowrap;'>เสี่ยงปานกลาง</span>";
-                        } else if (stataCode > 20 && stataCode <= 30) {
+                        } else if (stataCode >= 20 && stataCode < 30) {
                             statascol = "<span style='background-color: orange; padding: 10px; display: inline-block; vertical-align: middle; line-height: 1.5; white-space: nowrap;'>เสี่ยงสูง</span>";
-                        } else if (stataCode > 30) {
+                        } else if (stataCode >= 30) {
                             statascol = "<span style='background-color: red; color: white; padding: 10px; display: inline-block; vertical-align: middle; line-height: 1.5; white-space: nowrap;'>เสี่ยงสูงมาก</span>";
                         } else {
                             statascol = "<span style='background-color: gray; line-height: 1.5; white-space: nowrap;'>ไม่ตรงเงื่อนไข</span>";
