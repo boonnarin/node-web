@@ -1728,7 +1728,7 @@ function nonlab() {
 
 
     var statasNon = "";
-    if (stataCodea <= 5) {
+    if (stataCodea <5) {
         statasNon = " เสี่ยงน้อยมาก";
     } else if (stataCodea => 5 && stataCodea < 10) {
         statasNon = "เสี่ยงน้อย";
