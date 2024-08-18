@@ -242,15 +242,15 @@
 
                         var statascol = "";
 
-                        if (stataCodea <= 5) {
+                        if (stataCodea < 5) {
                             statascol = "<span style='background-color: green; color: white; padding: 10px; display: inline-block; vertical-align: middle; line-height: 1.5; white-space: nowrap;'>เสี่ยงน้อยมาก</span>";
-                        } else if (stataCodea > 5 && stataCodea <= 10) {
+                        } else if (stataCodea >= 5 && stataCodea < 10) {
                             statascol = "<span style='background-color: lightgreen; padding: 10px; display: inline-block; vertical-align: middle; line-height: 1.5; white-space: nowrap;'>เสี่ยงน้อย</span>";
-                        } else if (stataCodea > 10 && stataCodea <= 20) {
+                        } else if (stataCodea >= 10 && stataCodea < 20) {
                             statascol = "<span style='background-color: yellow; padding: 10px; display: inline-block; vertical-align: middle; line-height: 1.5; white-space: nowrap;'>เสี่ยงปานกลาง</span>";
-                        } else if (stataCodea > 20 && stataCodea <= 30) {
+                        } else if (stataCodea >= 20 && stataCodea < 30) {
                             statascol = "<span style='background-color: orange; padding: 10px; display: inline-block; vertical-align: middle; line-height: 1.5; white-space: nowrap;'>เสี่ยงสูง</span>";
-                        } else if (stataCodea > 30) {
+                        } else if (stataCodea >= 30) {
                             statascol = "<span style='background-color: red; color: white; padding: 10px; display: inline-block; vertical-align: middle; line-height: 1.5; white-space: nowrap;'>เสี่ยงสูงมาก</span>";
                         } else {
                             statascol = "<span style='background-color: gray; line-height: 1.5; white-space: nowrap;'>การประเมินความเสี่ยงโรคหัวใจเเละหลอดเลือด ใช้สำหรับผู้ที่มีอายุ 40-74 ปี</span>";
