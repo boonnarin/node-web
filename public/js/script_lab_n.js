@@ -3392,15 +3392,15 @@ function generateStataCode() {
     }
     //ปริ้นสี
     var statas = "";;
-    if (stataCode <= 5) {
+    if (stataCode < 5) {
         statas = " เสี่ยงน้อยมาก";
-    } else if (stataCode > 5 && stataCode <= 10) {
+    } else if (stataCode >= 5 && stataCode < 10) {
         statas = "เสี่ยงน้อย";
-    } else if (stataCode > 10 && stataCode <= 20) {
+    } else if (stataCode >= 10 && stataCode < 20) {
         statas = "เสี่ยงปานกลาง";
-    } else if (stataCode > 20 && stataCode <= 30) {
+    } else if (stataCode >= 20 && stataCode < 30) {
         statas = "เสี่ยงสูง";
-    } else if (stataCode > 30) {
+    } else if (stataCode >= 30) {
         statas = "เสี่ยงสูงมาก";
     } else {
         statas = "ไม่ตรงเงื่อนไข";
