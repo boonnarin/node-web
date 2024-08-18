@@ -1730,13 +1730,13 @@ function nonlab() {
     var statasNon = "";
     if (stataCodea <= 5) {
         statasNon = " เสี่ยงน้อยมาก";
-    } else if (stataCodea > 5 && stataCodea <= 10) {
+    } else if (stataCodea => 5 && stataCodea < 10) {
         statasNon = "เสี่ยงน้อย";
-    } else if (stataCodea > 10 && stataCodea <= 20) {
+    } else if (stataCodea => 10 && stataCodea < 20) {
         statasNon = "เสี่ยงปานกลาง";
-    } else if (stataCodea > 20 && stataCodea <= 30) {
+    } else if (stataCodea => 20 && stataCodea < 30) {
         statasNon = "เสี่ยงสูง";
-    } else if (stataCodea > 30) {
+    } else if (stataCodea => 30) {
         statasNon = "เสี่ยงสูงมาก";
     } else {
         statasNon = "ไม่ตรงเงื่อนไข";
