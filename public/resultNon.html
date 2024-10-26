@@ -71,7 +71,7 @@
             <img src="images/logo.png" alt="Logo">
             <img src="images/Logo_su.png" alt="Logo_su" style="width: 60px; height: auto;">
             <div class="header-text">
-                <div class="header-title">Computer-Based Technology in Enhancing Cardiovascular Disease Risk Assessment
+                <div class="header-title">Web Application Enhancing Cardiovascular Disease Risk Assessment
                 </div>
                 <div class="header-subtitle">by Phramongkutklao College of Medicine & Silpakorn University</div>
             </div>
@@ -86,7 +86,7 @@
                 <button>&#8942;</button> <!-- Vertical ellipsis icon -->
             </div>
 
-            <a href="/login" class="login-button" id="loginbutton">SignIn</a>
+            <a href="/login" class="login-button" id="loginbutton">Sign In</a>
         </div>
 
         <!-- ป๊อบอัพหน้าlogin
@@ -175,7 +175,7 @@
                         // สร้างตัวแปร ybmi
                         let ybmi = "";
                         let ybmip = "";
-                        if (bmi2 < 18.5) {
+                       if (bmi2 < 18.5) {
                             ybmi = "- <b>ท่านมีน้ำหนักต่ำกว่าเกณฑ์ (underweight)</b>";
                             ybmip = "- ท่านมีน้ำหนักต่ำกว่าเกณฑ์ (underweight)";
                         } else if (bmi2 >= 18.5 && bmi2 < 23) {
@@ -185,8 +185,9 @@
                             ybmi = "- <b>ท่านมีภาวะน้ำหนักเกิน (over weight)</b> ควรลดน้ำหนัก ลดการรับประทานอาหารที่มีน้ำตาลและไขมันสูง รับประทานผักผลไม้เป็นประจำ ออกกำลังกายสม่ำเสมอ";
                             ybmip = "- ท่านมีภาวะน้ำหนักเกิน (over weight) ควรลดน้ำหนัก ลดการรับประทานอาหารที่มีน้ำตาลและไขมันสูง รับประทานผักผลไม้เป็นประจำ ออกกำลังกายสม่ำเสมอ";
                         } else if (bmi2 >= 25 && bmi2 < 30) {
-                            ybmi = "- <b>ท่านมีภาวะน้ำหนักเกิน (over weight)</b> ควรลดน้ำหนัก ลดการรับประทานอาหารที่มีน้ำตาลและไขมันสูง รับประทานผักผลไม้เป็นประจำ ออกกำลังกายสม่ำเสมอ";
-                            ybmip = "- ท่านมีภาวะน้ำหนักเกิน (over weight) ควรลดน้ำหนัก ลดการรับประทานอาหารที่มีน้ำตาลและไขมันสูง รับประทานผักผลไม้เป็นประจำ ออกกำลังกายสม่ำเสมอ";
+                            ybmi = "- <b> ท่านมีภาวะอ้วน(obesity I)</b> ควรลดน้ำหนัก ลดการรับประทานอาหารที่มีน้ำตาลและไขมันสูง รับประทานผักผลไม้เป็นประจำ ออกกำลังกายสม่ำเสมอ";
+                            ybmip = "- ท่านมีภาวะอ้วน(obesity I) ควรลดน้ำหนัก ลดการรับประทานอาหารที่มีน้ำตาลและไขมันสูง รับประทานผักผลไม้เป็นประจำ ออกกำลังกายสม่ำเสมอ";
+
                         } else if (bmi2 >= 30) {
                             ybmi = "- <b>ท่านมีภาวะอ้วนอันตราย (obesity II)</b> ควรลดน้ำหนัก ลดอาหารที่มีน้ำตาลและไขมันสูง รับประทานผักผลไม้เป็นประจำ ออกกำลังกายสม่ำเสมอ";
                             ybmip = "- ท่านมีภาวะอ้วนอันตราย (obesity II) ควรลดน้ำหนัก ลดอาหารที่มีน้ำตาลและไขมันสูง รับประทานผักผลไม้เป็นประจำ ออกกำลังกายสม่ำเสมอ";
@@ -243,15 +244,15 @@
                         var statascol = "";
 
                         if (stataCodea < 5) {
-                            statascol = "<span style='background-color: green; color: white; padding: 10px; display: inline-block; vertical-align: middle; line-height: 1.5; white-space: nowrap;'>เสี่ยงน้อยมาก</span>";
+                            statascol = "<span style='background-color: #7CFC00; color: white; padding: 10px; display: inline-block; vertical-align: middle; line-height: 1.5; white-space: nowrap;'>เสี่ยงน้อยมาก</span>";
                         } else if (stataCodea >= 5 && stataCodea < 10) {
-                            statascol = "<span style='background-color: lightgreen; padding: 10px; display: inline-block; vertical-align: middle; line-height: 1.5; white-space: nowrap;'>เสี่ยงน้อย</span>";
+                            statascol = "<span style='background-color: #FFFF00; padding: 10px; display: inline-block; vertical-align: middle; line-height: 1.5; white-space: nowrap;'>เสี่ยงน้อย</span>";
                         } else if (stataCodea >= 10 && stataCodea < 20) {
-                            statascol = "<span style='background-color: yellow; padding: 10px; display: inline-block; vertical-align: middle; line-height: 1.5; white-space: nowrap;'>เสี่ยงปานกลาง</span>";
+                            statascol = "<span style='background-color: #FF8C00; padding: 10px; display: inline-block; vertical-align: middle; line-height: 1.5; white-space: nowrap;'>เสี่ยงปานกลาง</span>";
                         } else if (stataCodea >= 20 && stataCodea < 30) {
-                            statascol = "<span style='background-color: orange; padding: 10px; display: inline-block; vertical-align: middle; line-height: 1.5; white-space: nowrap;'>เสี่ยงสูง</span>";
+                            statascol = "<span style='background-color: #FF0000; padding: 10px; display: inline-block; vertical-align: middle; line-height: 1.5; white-space: nowrap;'>เสี่ยงสูง</span>";
                         } else if (stataCodea >= 30) {
-                            statascol = "<span style='background-color: red; color: white; padding: 10px; display: inline-block; vertical-align: middle; line-height: 1.5; white-space: nowrap;'>เสี่ยงสูงมาก</span>";
+                            statascol = "<span style='background-color: #b22222; color: white; padding: 10px; display: inline-block; vertical-align: middle; line-height: 1.5; white-space: nowrap;'>เสี่ยงสูงมาก</span>";
                         } else {
                             statascol = "<span style='background-color: gray; line-height: 1.5; white-space: nowrap;'>การประเมินความเสี่ยงโรคหัวใจเเละหลอดเลือด ใช้สำหรับผู้ที่มีอายุ 40-74 ปี</span>";
                         }
@@ -260,17 +261,22 @@
                         // แสดงค่าที่ดึงมาในหน้า result.html
                         const resultDiv = document.getElementById('result');
 
-                        resultDiv.innerHTML = ` <p><strong>ข้อมูลสุขภาพ</strong></p> 
-                    <p>ชื่อ : ${name1} ${lastname} เพศ : ${sex} อายุ : ${age} ปี</p>
-                    <p>ค่าBMI : ${bmi2}  ${smk} </p>
-                    <p>ระดับความดันโลหิตค่าบนเฉลี่ย ${sbp} mmHg </p>
-                    <p id ="specialRecommendation">การประเมินความเสี่ยงโรคหัวใจเเละหลอดเลือด</p>
+                        resultDiv.innerHTML = `<br>
+                    <p><strong>ข้อมูลสุขภาพ</strong></p> 
+                    <p>ชื่อ (Name) : <strong>${name1} ${lastname} </strong>  เพศ (Sex) : <strong>${sex}</strong>  อายุ (Age) : <strong>${age}</strong> ปี (years)</p>
+                    <p>สถานะการสูบบุหรี่ (Smoking status) : <strong>${smk}</strong></p>
+                    <p>ดัชนีมวลกาย (Body mass index) : <strong>${bmi2}</strong> กิโลกรัมต่อตารางเมตร (kg/square meter)  </p>
+                    <p>ระดับความดันโลหิตค่าบนเฉลี่ย (Average systolic blood pressure) <strong>${sbp}</strong> มิลลิเมตรปรอท (mmHg) </p>
+                    <br>
+                    <p id ="specialRecommendation"><strong>การประเมินความเสี่ยงโรคหัวใจเเละหลอดเลือด</strong></p>
                     <p>ความเสี่ยงต่อการป่วยหรือเสียชีวิตจากโรคหัวใจและหลอดเลือด เช่น กล้ามเนื้อหัวใจขาดเลือดและโรคเส้นเลือดสมองตีบในระยะ 10 ปีข้างหน้าของท่าน เท่ากับ <strong>${stataCodea} %</strong></p>
-                    <p> ซึ่งจัดอยู่อยู่ในกลุ่ม : <b>${statascol}</b></p>
+                    <p> ซึ่งจัดอยู่อยู่ในกลุ่ม : <b><strong>${statascol}</strong></b></p>
+                    <br>
                     <p><strong>คำแนะนำเพื่อลดความเสี่ยงการเกิดโรคหัวใจและหลอดเลือดในอนาคต สำหรับท่าน</strong></p>
                     <p>${ysmk}</p>
                     <p>${ybmi}</p>
                     <p>${ysbp}</p>
+                    <br>
                     <p><strong>คำเเนะนำทั่วไป</strong></p>
                     <p>- เพื่อลดความเสี่ยงต่อการเกิดโรคหัวใจและหลอดเลือด ควรออกกำลังกายอย่างสม่ำเสมอ อย่างน้อยสัปดาห์ละ 3 วัน วันละ 20-30 นาที ทั้งนี้ หากมีโรคประจำตัวหรืออาการเจ็บป่วย ควรปรึกษาบุคลากรทางการแพทย์ก่อน และไม่ควรหักโหมมากนัก</p>
                     <p>- หากท่านดื่มสุรา ให้ลด หรือ เลิก (สายด่วนเลิกสุรา 1413) หากไม่ได้ดื่มอยู่แล้ว ไม่แนะนำให้ดื่ม</p>
