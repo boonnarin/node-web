@@ -71,7 +71,7 @@
             <img src="images/logo.png" alt="Logo">
             <img src="images/Logo_su.png" alt="Logo_su" style="width: 60px; height: auto;">
             <div class="header-text">
-                <div class="header-title">Computer-Based Technology in Enhancing Cardiovascular Disease Risk Assessment
+                <div class="header-title">Web Application Enhancing Cardiovascular Disease Risk Assessment
                 </div>
                 <div class="header-subtitle">by Phramongkutklao College of Medicine & Silpakorn University</div>
             </div>
@@ -256,15 +256,15 @@
                         var statascol = "";
 
                         if (stataCode < 5) {
-                            statascol = "<span style='background-color: green; color: white; padding: 10px; display: inline-block; vertical-align: middle; line-height: 1.5; white-space: nowrap;'>เสี่ยงน้อยมาก</span>";
+                            statascol = "<span style='background-color: #7CFC00; color: white; padding: 10px; display: inline-block; vertical-align: middle; line-height: 1.5; white-space: nowrap;'>เสี่ยงน้อยมาก</span>";
                         } else if (stataCode >= 5 && stataCode < 10) {
-                            statascol = "<span style='background-color: lightgreen; padding: 10px; display: inline-block; vertical-align: middle; line-height: 1.5; white-space: nowrap;'>เสี่ยงน้อย</span>";
+                            statascol = "<span style='background-color: #FFFF00; padding: 10px; display: inline-block; vertical-align: middle; line-height: 1.5; white-space: nowrap;'>เสี่ยงน้อย</span>";
                         } else if (stataCode >= 10 && stataCode < 20) {
-                            statascol = "<span style='background-color: yellow; padding: 10px; display: inline-block; vertical-align: middle; line-height: 1.5; white-space: nowrap;'>เสี่ยงปานกลาง</span>";
+                             statascol = "<span style='background-color: #FF8C00; padding: 10px; display: inline-block; vertical-align: middle; line-height: 1.5; white-space: nowrap;'>เสี่ยงปานกลาง</span>";
                         } else if (stataCode >= 20 && stataCode < 30) {
-                            statascol = "<span style='background-color: orange; padding: 10px; display: inline-block; vertical-align: middle; line-height: 1.5; white-space: nowrap;'>เสี่ยงสูง</span>";
+                            statascol = "<span style='background-color: #FF0000; 10px; display: inline-block; vertical-align: middle; line-height: 1.5; white-space: nowrap;'>เสี่ยงสูง</span>";
                         } else if (stataCode >= 30) {
-                            statascol = "<span style='background-color: red; color: white; padding: 10px; display: inline-block; vertical-align: middle; line-height: 1.5; white-space: nowrap;'>เสี่ยงสูงมาก</span>";
+                            statascol = "<span style='background-color: #b22222; color: white; padding: 10px; display: inline-block; vertical-align: middle; line-height: 1.5; white-space: nowrap;'>เสี่ยงสูงมาก</span>";
                         } else {
                             statascol = "<span style='background-color: gray; line-height: 1.5; white-space: nowrap;'>ไม่ตรงเงื่อนไข</span>";
                         }
@@ -273,25 +273,28 @@
                         // แสดงค่าที่ดึงมาในหน้า result.html
                         const resultDiv = document.getElementById('result');
 
-                        resultDiv.innerHTML = ` <p><strong>ข้อมูลสุขภาพ</strong></p> 
-                    <p>ชื่อ : ${name1} ${lastname} เพศ : ${sex} อายุ : ${age} ปี</p>
-                    <p>${dm} ${smk} </p>
-                    <p>ระดับความดันโลหิตค่าบนเฉลี่ย ${sbp} mmHg </p>
-                    <p>ระดับคอลเลสเตอรอล ${tc} mg/dL</p>
-                    <p id ="specialRecommendation">การประเมินความเสี่ยงโรคหัวใจเเละหลอดเลือด</p>
+                        resultDiv.innerHTML = `<br>
+                    <p><strong>ข้อมูลสุขภาพ</strong></p> 
+                    <p>ชื่อ (Name) : <strong>${name1} ${lastname} </strong>  เพศ (Sex) : <strong>${sex}</strong>  อายุ (Age) : <strong>${age}</strong> ปี (years)</p>
+                    <p><strong> ${dm}</strong>  สถานะการสูบบุหรี่ (Smoking status) : <strong>${smk}</strong> </p>
+                    <p>>ระดับความดันโลหิตค่าบนเฉลี่ย (Average systolic blood pressure) <strong>${sbp}</strong> มิลลิเมตรปรอท (mmHg)  </p>
+                    <p>ระดับคอลเลสเตอรอล (Total cholesterol) <strong>${tc} </strong> มิลลิกรัมต่อเดซิลิตร (mg/dL)</p>
+                    <br>
+                    <p id ="specialRecommendation"><strong>การประเมินความเสี่ยงโรคหัวใจเเละหลอดเลือด</strong></p>
                     <p>ความเสี่ยงต่อการป่วยหรือเสียชีวิตจากโรคหัวใจและหลอดเลือด เช่น กล้ามเนื้อหัวใจขาดเลือดและโรคเส้นเลือดสมองตีบในระยะ 10 ปีข้างหน้าของท่าน เท่ากับ <b>${stataCode} % </b></p>
                     <p>ซึ่งจัดอยู่อยู่ในกลุ่ม : <b>${statascol}</b></p>
+                    <br>
                     <p><strong>คำแนะนำเพื่อลดความเสี่ยงการเกิดโรคหัวใจและหลอดเลือดในอนาคต สำหรับท่าน</strong></p>
                     <p>${ysmk}</p>
                     <p>${ydm}</p>
                     <p>${ysbp}</p>
                     <p>${ytc}</p>
+                    <br>
                     <p><strong>คำเเนะนำทั่วไป</strong></p>
                     <p>- เพื่อลดความเสี่ยงต่อการเกิดโรคหัวใจและหลอดเลือด ควรออกกำลังกายอย่างสม่ำเสมอ อย่างน้อยสัปดาห์ละ 3 วัน วันละ 20-30 นาที ทั้งนี้ หากมีโรคประจำตัวหรืออาการเจ็บป่วย ควรปรึกษาบุคลากรทางการแพทย์ก่อน และไม่ควรหักโหมมากนัก</p>
                     <p>- หากท่านดื่มสุรา ให้ลด หรือ เลิก (สายด่วนเลิกสุรา 1413) หากไม่ได้ดื่มอยู่แล้ว ไม่แนะนำให้ดื่ม</p>
                     <p>- ควรรับการตรวจสุขภาพเพื่อประเมินความเสี่ยงของโรคหัวใจและหลอดเลือด อย่างน้อย ปีละ 1 ครั้ง</p>
                     <p>- ผลการประเมินเหล่านี้เป็นการประเมินความเสี่ยงต่อการเกิดโรคหัวใจและหลอดเลือดเบื้องต้น ควรเข้ารับคำปรึกษาและตรวจเพิ่มเติมตามคำแนะนำของแพทย์</p>`;
-                        makepdf();
                     </script>
 
                 </div>
