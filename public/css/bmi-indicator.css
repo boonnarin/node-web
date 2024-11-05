@@ -1,0 +1,98 @@
+/* กำหนดค่าตัวแปรสำหรับความสูงของแถบ */
+:root {
+    --bar-height: 100px;
+}
+
+/* สไตล์สำหรับแถบ BMI */
+.bmi-bar {
+    width: 65%;
+    height: auto;
+    /* ปรับความสูงเป็นอัตโนมัติ */
+    display: flex;
+    align-items: flex-end;
+    overflow: visible;
+    margin-left: 0;
+}
+
+/* สไตล์สำหรับแต่ละส่วนของแถบ */
+.bmi-section {
+    height: var(--bar-height);
+    /* กำหนดความสูงเริ่มต้นของแถบ */
+    box-sizing: border-box;
+    border: 2px solid black;
+    transition: flex 0.3s ease, height 0.3s ease;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    /* จัดเนื้อหาให้อยู่ด้านล่าง */
+    color: white;
+    /* ตั้งค่าสีตัวอักษรเป็นสีขาว */
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.0em;
+    position: relative;
+}
+
+/* สีพื้นหลังสำหรับแต่ละระดับของ BMI */
+.underweight {
+    background-color: #0099FF;
+}
+
+.normal {
+    background-color: green;
+}
+
+.overweight {
+    background-color: yellow;
+    /* ลบหรือคอมเมนต์บรรทัดนี้ */
+    color: black;
+}
+
+.obese {
+    background-color: orange;
+}
+
+.morbidly-obese {
+    background-color: red;
+}
+
+/* สไตล์สำหรับส่วนที่ถูกไฮไลท์ */
+.highlighted {
+    flex: 2;
+    height: calc(var(--bar-height) * 2);
+    /* แถบขยายขึ้น */
+    border: 4px solid lightgreen;
+}
+
+/* สร้างลูกศรในส่วนที่ถูกไฮไลท์ */
+.highlighted::before {
+    content: '';
+    position: absolute;
+    top: 0%;
+    /* วางลูกศรไว้ใต้แถบ */
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 40px solid black;
+    /* เพิ่มความยาวลูกศร */
+}
+
+/* สไตล์สำหรับหน้าจอขนาดเล็ก */
+@media (max-width: 600px) {
+    :root {
+        --bar-height: 60px;
+    }
+
+    .bmi-section {
+        font-size: 0.4em;
+    }
+
+    .highlighted::before {
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 20px solid black;
+        /* ปรับความยาวลูกศรสำหรับหน้าจอเล็ก */
+    }
+}
