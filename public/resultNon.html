@@ -16,6 +16,8 @@
     <script src='../node_modules/pdfmake/build/vfs_fonts.js'></script>
     <!-- <link rel="stylesheet" href="css/stys.css"> -->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/bmi-indicator.css">
+    <link rel="stylesheet" href="css/spb-indicator.css">
     <title>Results</title>
     <script>
         function goBack() {
@@ -172,23 +174,23 @@
                             smk = "";
                         }
 
+                        let bmi3 = bmi2;
                         // สร้างตัวแปร ybmi
                         let ybmi = "";
                         let ybmip = "";
-                       if (bmi2 < 18.5) {
+                        if (bmi2 < 18.5) {
                             ybmi = "- <b>ท่านมีน้ำหนักต่ำกว่าเกณฑ์ (underweight)</b>";
                             ybmip = "- ท่านมีน้ำหนักต่ำกว่าเกณฑ์ (underweight)";
-                        } else if (bmi2 >= 18.5 && bmi2 < 23) {
+                        } else if (bmi2 >= 18.5 && bmi2 <= 24.9) {
                             ybmi = "- <b>ท่านมีน้ำหนักอยู่ในเกณฑ์ปกติ (normal weight)</b>";
                             ybmip = "- ท่านมีน้ำหนักอยู่ในเกณฑ์ปกติ (normal weight)";
-                        } else if (bmi2 >= 23 && bmi2 < 25) {
+                        } else if (bmi2 >= 25 && bmi2 <= 29.9) {
                             ybmi = "- <b>ท่านมีภาวะน้ำหนักเกิน (over weight)</b> ควรลดน้ำหนัก ลดการรับประทานอาหารที่มีน้ำตาลและไขมันสูง รับประทานผักผลไม้เป็นประจำ ออกกำลังกายสม่ำเสมอ";
                             ybmip = "- ท่านมีภาวะน้ำหนักเกิน (over weight) ควรลดน้ำหนัก ลดการรับประทานอาหารที่มีน้ำตาลและไขมันสูง รับประทานผักผลไม้เป็นประจำ ออกกำลังกายสม่ำเสมอ";
-                        } else if (bmi2 >= 25 && bmi2 < 30) {
-                            ybmi = "- <b> ท่านมีภาวะอ้วน(obesity I)</b> ควรลดน้ำหนัก ลดการรับประทานอาหารที่มีน้ำตาลและไขมันสูง รับประทานผักผลไม้เป็นประจำ ออกกำลังกายสม่ำเสมอ";
-                            ybmip = "- ท่านมีภาวะอ้วน(obesity I) ควรลดน้ำหนัก ลดการรับประทานอาหารที่มีน้ำตาลและไขมันสูง รับประทานผักผลไม้เป็นประจำ ออกกำลังกายสม่ำเสมอ";
-
-                        } else if (bmi2 >= 30) {
+                        } else if (bmi2 >= 30 && bmi2 <= 34.9) {
+                            ybmi = "- <b>ท่านมีภาวะอ้วน (obesity I)</b> ควรลดน้ำหนัก ลดการรับประทานอาหารที่มีน้ำตาลและไขมันสูง รับประทานผักผลไม้เป็นประจำ ออกกำลังกายสม่ำเสมอ";
+                            ybmip = "- ท่านมีภาวะอ้วน (obesity I) ควรลดน้ำหนัก ลดการรับประทานอาหารที่มีน้ำตาลและไขมันสูง รับประทานผักผลไม้เป็นประจำ ออกกำลังกายสม่ำเสมอ";
+                        } else if (bmi2 >= 35) {
                             ybmi = "- <b>ท่านมีภาวะอ้วนอันตราย (obesity II)</b> ควรลดน้ำหนัก ลดอาหารที่มีน้ำตาลและไขมันสูง รับประทานผักผลไม้เป็นประจำ ออกกำลังกายสม่ำเสมอ";
                             ybmip = "- ท่านมีภาวะอ้วนอันตราย (obesity II) ควรลดน้ำหนัก ลดอาหารที่มีน้ำตาลและไขมันสูง รับประทานผักผลไม้เป็นประจำ ออกกำลังกายสม่ำเสมอ";
                         } else {
@@ -274,14 +276,119 @@
                     <br>
                     <p><strong>คำแนะนำเพื่อลดความเสี่ยงการเกิดโรคหัวใจและหลอดเลือดในอนาคต สำหรับท่าน</strong></p>
                     <p>${ysmk}</p>
-                    <p>${ybmi}</p>
-                    <p>${ysbp}</p>
+                    <br>
+                        <!-- แทรกแถบ BMI ที่นี่ -->
+                        <div class="bmi-bar">
+                            <div class="bmi-section underweight" id="underweight">
+                                <span>ต่ำกว่าเกณฑ์<br>Underweight<br>(&lt;18.5)</span>
+                            </div>
+                            <div class="bmi-section normal" id="normal">
+                                <span>ปกติ<br>Normal<br>(18.5 - 24.9)</span>
+                            </div>
+                            <div class="bmi-section overweight" id="overweight">
+                                <span>น้ำหนักเกิน<br>Overweight<br>(25 - 29.9)</span>
+                            </div>
+                            <div class="bmi-section obese" id="obese">
+                                <span>อ้วน<br>Obese<br>(30 - 34.9)</span>
+                            </div>
+                            <div class="bmi-section morbidly-obese" id="morbidly-obese">
+                                <span>อ้วนระดับสอง<br>Morbidly Obese<br>(&ge;35)</span>
+                            </div>
+                        </div>
+                        
+                        <br>
+                        <p>${ybmi}</p>
+
+                        <br>
+                        <!-- แถบ SBP -->
+                        <div class="sbp-bar">
+                            <div class="sbp-section optimal" id="optimal">
+                                <span>ระดับเหมาะสม<br>(&lt;120)</span>
+                            </div>
+                            <div class="sbp-section normal" id="normal">
+                                <span>ระดับปกติ<br>(120 - 129)</span>
+                            </div>
+                            <div class="sbp-section high-normal" id="high-normal">
+                                <span>เริ่มสูงเล็กน้อย<br>(130 - 140)</span>
+                            </div>
+                            <div class="sbp-section hypertension1" id="hypertension1">
+                                <span>ความดันโลหิตสูง ระดับที่ 1<br>(140 - 159)</span>
+                            </div>
+                            <div class="sbp-section hypertension2" id="hypertension2">
+                                <span>ความดันโลหิตสูง ระดับที่ 2<br>(160 - 179)</span>
+                            </div>
+                            <div class="sbp-section crisis" id="crisis">
+                                <span>ความดันโลหิตสูงระดับวิกฤต<br>(&ge;180)</span>
+                             </div>
+                        </div>
+                        <br>
+
                     <br>
                     <p><strong>คำเเนะนำทั่วไป</strong></p>
                     <p>- เพื่อลดความเสี่ยงต่อการเกิดโรคหัวใจและหลอดเลือด ควรออกกำลังกายอย่างสม่ำเสมอ อย่างน้อยสัปดาห์ละ 3 วัน วันละ 20-30 นาที ทั้งนี้ หากมีโรคประจำตัวหรืออาการเจ็บป่วย ควรปรึกษาบุคลากรทางการแพทย์ก่อน และไม่ควรหักโหมมากนัก</p>
                     <p>- หากท่านดื่มสุรา ให้ลด หรือ เลิก (สายด่วนเลิกสุรา 1413) หากไม่ได้ดื่มอยู่แล้ว ไม่แนะนำให้ดื่ม</p>
                     <p>- ควรรับการตรวจสุขภาพเพื่อประเมินความเสี่ยงของโรคหัวใจและหลอดเลือด อย่างน้อย ปีละ 1 ครั้ง</p>
                     <p>- ผลการประเมินเหล่านี้เป็นการประเมินความเสี่ยงต่อการเกิดโรคหัวใจและหลอดเลือดเบื้องต้น ควรเข้ารับคำปรึกษาและตรวจเพิ่มเติมตามคำแนะนำของแพทย์</p>`;
+                    // สร้างตัวแปร bmiValue และ sections สำหรับแถบ BMI
+                        const bmiValue = parseFloat(bmi3); // แปลงค่าเป็นตัวเลข
+
+                        const sections = [
+                            { name: 'underweight', max: 18.5 },
+                            { name: 'normal', max: 24.9 },
+                            { name: 'overweight', max: 29.9 },
+                            { name: 'obese', max: 34.9 },
+                            { name: 'morbidly-obese', max: 40 }
+                        ];
+
+                        // ฟังก์ชันสำหรับอัปเดตแถบ BMI
+                        function updateIndicator() {
+                            for (const section of sections) {
+                                const sectionElement = document.getElementById(section.name);
+
+                                if (sectionElement) {
+                                    if (bmiValue <= section.max) {
+                                        sectionElement.classList.add('highlighted');
+                                        break;
+                                    } else {
+                                        sectionElement.classList.remove('highlighted');
+                                    }
+                                }
+                            }
+                        }
+
+                        // เรียกใช้ฟังก์ชันหลังจากที่ DOM ถูกอัปเดต
+                        updateIndicator();
+
+                        // สมมติว่าคุณมีตัวแปร sbp ที่เก็บค่าความดันโลหิตของผู้ใช้
+                        const sbpValue = parseFloat(sbp); // แทนที่ sbp ด้วยตัวแปรที่เก็บค่าจริง
+
+                        const sbpSections = [
+                            { name: 'optimal', max: 120 },
+                            { name: 'normal', max: 130 },
+                            { name: 'high-normal', max: 140 },
+                            { name: 'hypertension1', max: 160 },
+                            { name: 'hypertension2', max: 180 },
+                            { name: 'crisis', max: Infinity }
+                        ];
+
+                        function updateSBPIndicator() {
+                            for (const section of sbpSections) {
+                                const sectionElement = document.getElementById(section.name);
+
+                                if (sectionElement) {
+                                    if (sbpValue < section.max) {
+                                        sectionElement.classList.add('sbp-highlighted');
+                                        break;
+                                    } else {
+                                        sectionElement.classList.remove('sbp-highlighted');
+                                    }
+                                }
+                            }
+                        }
+
+                        // เรียกใช้ฟังก์ชันหลังจากที่ DOM ถูกอัปเดต
+                        updateSBPIndicator();
+
                         makepdf();
                     </script>
 
