@@ -181,16 +181,16 @@
                         if (bmi2 < 18.5) {
                             ybmi = "- <b>ท่านมีน้ำหนักต่ำกว่าเกณฑ์ (underweight)</b>";
                             ybmip = "- ท่านมีน้ำหนักต่ำกว่าเกณฑ์ (underweight)";
-                        } else if (bmi2 >= 18.5 && bmi2 <= 24.9) {
+                        } else if (bmi2 >= 18.5 && bmi2 < 23.0 ) {
                             ybmi = "- <b>ท่านมีน้ำหนักอยู่ในเกณฑ์ปกติ (normal weight)</b>";
                             ybmip = "- ท่านมีน้ำหนักอยู่ในเกณฑ์ปกติ (normal weight)";
-                        } else if (bmi2 >= 25 && bmi2 <= 29.9) {
+                        } else if (bmi2 >= 23 && bmi2 < 25.0) {
                             ybmi = "- <b>ท่านมีภาวะน้ำหนักเกิน (over weight)</b> ควรลดน้ำหนัก ลดการรับประทานอาหารที่มีน้ำตาลและไขมันสูง รับประทานผักผลไม้เป็นประจำ ออกกำลังกายสม่ำเสมอ";
                             ybmip = "- ท่านมีภาวะน้ำหนักเกิน (over weight) ควรลดน้ำหนัก ลดการรับประทานอาหารที่มีน้ำตาลและไขมันสูง รับประทานผักผลไม้เป็นประจำ ออกกำลังกายสม่ำเสมอ";
-                        } else if (bmi2 >= 30 && bmi2 <= 34.9) {
+                        } else if (bmi2 >= 25 && bmi2 -< 30.0) {
                             ybmi = "- <b>ท่านมีภาวะอ้วน (obesity I)</b> ควรลดน้ำหนัก ลดการรับประทานอาหารที่มีน้ำตาลและไขมันสูง รับประทานผักผลไม้เป็นประจำ ออกกำลังกายสม่ำเสมอ";
                             ybmip = "- ท่านมีภาวะอ้วน (obesity I) ควรลดน้ำหนัก ลดการรับประทานอาหารที่มีน้ำตาลและไขมันสูง รับประทานผักผลไม้เป็นประจำ ออกกำลังกายสม่ำเสมอ";
-                        } else if (bmi2 >= 35) {
+                        } else if (bmi2 >= 30) {
                             ybmi = "- <b>ท่านมีภาวะอ้วนอันตราย (obesity II)</b> ควรลดน้ำหนัก ลดอาหารที่มีน้ำตาลและไขมันสูง รับประทานผักผลไม้เป็นประจำ ออกกำลังกายสม่ำเสมอ";
                             ybmip = "- ท่านมีภาวะอ้วนอันตราย (obesity II) ควรลดน้ำหนัก ลดอาหารที่มีน้ำตาลและไขมันสูง รับประทานผักผลไม้เป็นประจำ ออกกำลังกายสม่ำเสมอ";
                         } else {
@@ -283,16 +283,16 @@
                                 <span>ต่ำกว่าเกณฑ์<br>Underweight<br>(&lt;18.5)</span>
                             </div>
                             <div class="bmi-section normal" id="normal">
-                                <span>ปกติ<br>Normal<br>(18.5 - 24.9)</span>
+                                <span>ปกติ<br>Normalweight<br>(18.5 - 23)</span>
                             </div>
                             <div class="bmi-section overweight" id="overweight">
-                                <span>น้ำหนักเกิน<br>Overweight<br>(25 - 29.9)</span>
+                                <span>น้ำหนักเกิน<br>Overweight<br>(23 - 25)</span>
                             </div>
                             <div class="bmi-section obese" id="obese">
-                                <span>อ้วน<br>Obese<br>(30 - 34.9)</span>
+                                <span>อ้วน<br>Obese I<br>(25 - 29)</span>
                             </div>
                             <div class="bmi-section morbidly-obese" id="morbidly-obese">
-                                <span>อ้วนระดับสอง<br>Morbidly Obese<br>(&ge;35)</span>
+                                <span>อ้วนระดับสอง<br>Obese II<br>(&ge;30)</span>
                             </div>
                         </div>
                         
@@ -337,9 +337,9 @@
 
                         const sections = [
                             { name: 'underweight', max: 18.5 },
-                            { name: 'normal', max: 24.9 },
-                            { name: 'overweight', max: 29.9 },
-                            { name: 'obese', max: 34.9 },
+                            { name: 'normal', max: 23 },
+                            { name: 'overweight', max: 25 },
+                            { name: 'obese', max: 30 },
                             { name: 'morbidly-obese', max: 40 }
                         ];
 
