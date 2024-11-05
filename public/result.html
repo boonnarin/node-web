@@ -287,7 +287,43 @@
                     <p><strong>คำแนะนำเพื่อลดความเสี่ยงการเกิดโรคหัวใจและหลอดเลือดในอนาคต สำหรับท่าน</strong></p>
                     <p>${ysmk}</p>
                     <p>${ydm}</p>
+                    <br>
+                    <!-- แถบ SBP -->
+                        <div class="sbp-bar">
+                            <div class="sbp-section optimal" id="optimal">
+                                <span>ระดับเหมาะสม<br>(&lt;120)</span>
+                            </div>
+                            <div class="sbp-section normal" id="normal">
+                                <span>ระดับปกติ<br>(120 - 129)</span>
+                            </div>
+                            <div class="sbp-section high-normal" id="high-normal">
+                                <span>เริ่มสูงเล็กน้อย<br>(130 - 140)</span>
+                            </div>
+                            <div class="sbp-section hypertension1" id="hypertension1">
+                                <span>ความดันโลหิตสูง ระดับที่ 1<br>(140 - 159)</span>
+                            </div>
+                            <div class="sbp-section hypertension2" id="hypertension2">
+                                <span>ความดันโลหิตสูง ระดับที่ 2<br>(160 - 179)</span>
+                            </div>
+                            <div class="sbp-section crisis" id="crisis">
+                                <span>ความดันโลหิตสูงระดับวิกฤต<br>(&ge;180)</span>
+                             </div>
+                        </div>
+                    <br>
                     <p>${ysbp}</p>
+                    <br>
+                    <div class="cholesterol-bar">
+                        <div class="cholesterol-section normal" id="cholesterol-normal">
+                            <span>ปกติ<br>Normal<br>(&lt;150)</span>
+                        </div>
+                        <div class="cholesterol-section borderline-high" id="cholesterol-borderline-high">
+                            <span>ค่อนข้างสูง<br>Borderline High<br>(150 - 199)</span>
+                        </div>
+                        <div class="cholesterol-section high" id="cholesterol-high">
+                            <span>สูง<br>High<br>(&ge;200)</span>
+                        </div>
+                    </div>
+                    <br>
                     <p>${ytc}</p>
                     <br>
                     <p><strong>คำเเนะนำทั่วไป</strong></p>
@@ -295,6 +331,62 @@
                     <p>- หากท่านดื่มสุรา ให้ลด หรือ เลิก (สายด่วนเลิกสุรา 1413) หากไม่ได้ดื่มอยู่แล้ว ไม่แนะนำให้ดื่ม</p>
                     <p>- ควรรับการตรวจสุขภาพเพื่อประเมินความเสี่ยงของโรคหัวใจและหลอดเลือด อย่างน้อย ปีละ 1 ครั้ง</p>
                     <p>- ผลการประเมินเหล่านี้เป็นการประเมินความเสี่ยงต่อการเกิดโรคหัวใจและหลอดเลือดเบื้องต้น ควรเข้ารับคำปรึกษาและตรวจเพิ่มเติมตามคำแนะนำของแพทย์</p>`;
+                      // สมมติว่าคุณมีตัวแปร sbp ที่เก็บค่าความดันโลหิตของผู้ใช้
+                        const sbpValue = parseFloat(sbp); // แทนที่ sbp ด้วยตัวแปรที่เก็บค่าจริง
+
+                        const sbpSections = [
+                            { name: 'optimal', max: 120 },
+                            { name: 'normal', max: 130 },
+                            { name: 'high-normal', max: 140 },
+                            { name: 'hypertension1', max: 160 },
+                            { name: 'hypertension2', max: 180 },
+                            { name: 'crisis', max: Infinity }
+                        ];
+
+                        function updateSBPIndicator() {
+                            for (const section of sbpSections) {
+                                const sectionElement = document.getElementById(section.name);
+
+                                if (sectionElement) {
+                                    if (sbpValue < section.max) {
+                                        sectionElement.classList.add('sbp-highlighted');
+                                        break;
+                                    } else {
+                                        sectionElement.classList.remove('sbp-highlighted');
+                                    }
+                                }
+                            }
+                        }
+
+                        // เรียกใช้ฟังก์ชันหลังจากที่ DOM ถูกอัปเดต
+                        updateSBPIndicator();
+
+                        // สมมติว่าคุณมีตัวแปร tc ที่เก็บค่าระดับคลอเลสเตอรอลของผู้ใช้
+                        const tcValue = parseFloat(tc); // แปลงค่าเป็นตัวเลข
+
+                        const cholesterolSections = [
+                            { name: 'cholesterol-normal', max: 150 },
+                            { name: 'cholesterol-borderline-high', max: 200 },
+                            { name: 'cholesterol-high', max: Infinity }
+                        ];
+
+                        function updateCholesterolIndicator() {
+                            for (const section of cholesterolSections) {
+                                const sectionElement = document.getElementById(section.name);
+
+                                if (sectionElement) {
+                                    if (tcValue < section.max) {
+                                        sectionElement.classList.add('cholesterol-highlighted');
+                                        break;
+                                    } else {
+                                        sectionElement.classList.remove('cholesterol-highlighted');
+                                    }
+                                }
+                            }
+                        }
+
+                        // เรียกใช้ฟังก์ชันหลังจากที่ DOM ถูกอัปเดต
+                        updateCholesterolIndicator();
                     makepdf();
                     </script>
 
