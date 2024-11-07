@@ -1,4 +1,8 @@
 /* สไตล์สำหรับแถบคลอเลสเตอรอล */
+:root {
+    --bar-height: 110px;
+}
+
 .cholesterol-bar {
     width: 65%;
     height: auto;
@@ -59,9 +63,13 @@
 }
 
 /* สไตล์สำหรับหน้าจอขนาดเล็ก */
-@media (max-width: 600px) {
+@media (max-width: 400px) {
+    :root {
+        --bar-height: 60px;
+    }
+
     .cholesterol-section {
-        font-size: 0.8em;
+        font-size: 0.4em;
     }
 
     .cholesterol-highlighted::before {
