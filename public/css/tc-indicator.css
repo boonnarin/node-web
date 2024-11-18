@@ -61,6 +61,22 @@
     border-right: 15px solid transparent;
     border-top: 40px solid black;
 }
+/* สไตล์สำหรับหน้าจอขนาดเล็ก */
+@media (max-width: 440px) {
+    :root {
+        --bar-height: 60px;
+    }
+
+    .cholesterol-section {
+        font-size: 0.2em;
+    }
+
+    .cholesterol-highlighted::before {
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 20px solid black;
+    }
+}
 
 /* สไตล์สำหรับหน้าจอขนาดเล็ก */
 @media (max-width: 560px) {
