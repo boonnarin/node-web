@@ -20,6 +20,7 @@
     height: var(--cholesterol-bar-height);
     box-sizing: border-box;
     border: 2px solid black;
+    transition: flex 0.3s ease, height 0.3s ease;
     flex: 1;
     display: flex;
     justify-content: center;
@@ -33,26 +34,26 @@
 
 /* สีพื้นหลังสำหรับแต่ละระดับของ Cholesterol */
 .cholesterol-section.normal {
-    background-color: green; /* สีเขียว */
+    background-color: green; /* เขียว */
 }
 
 .cholesterol-section.borderline-high {
-    background-color: orange; /* สีส้ม */
+    background-color: orange; /* ส้ม */
 }
 
 .cholesterol-section.high {
-    background-color: red; /* สีแดง */
+    background-color: red; /* แดง */
 }
 
-/* สไตล์สำหรับส่วนที่ถูกไฮไลท์ */
-.cholesterol-section.highlighted {
+/* สไตล์สำหรับส่วนที่ถูกไฮไลท์ในแถบ Cholesterol */
+.cholesterol-highlighted {
     flex: 2;
     height: calc(var(--cholesterol-bar-height) * 2);
     border: 4px solid lightgreen;
 }
 
 /* สร้างลูกศรในส่วนที่ถูกไฮไลท์ */
-.cholesterol-section.highlighted::before {
+.cholesterol-highlighted::before {
     content: '';
     position: absolute;
     top: 0%;
@@ -63,7 +64,7 @@
     border-top: 40px solid black;
 }
 
-/* สไตล์สำหรับหน้าจอขนาดเล็ก แถบ Cholesterol */
+/* สไตล์สำหรับหน้าจอขนาดเล็ก */
 @media (max-width: 440px) {
     :root {
         --cholesterol-bar-height: 60px;
@@ -73,7 +74,7 @@
         font-size: 0.2em;
     }
 
-    .cholesterol-section.highlighted::before {
+    .cholesterol-highlighted::before {
         border-left: 10px solid transparent;
         border-right: 10px solid transparent;
         border-top: 20px solid black;
@@ -88,8 +89,12 @@
     .cholesterol-section {
         font-size: 0.4em;
     }
+    .cholesterol-bar {
+    width: 45%;
 
-    .cholesterol-section.highlighted::before {
+}
+
+    .cholesterol-highlighted::before {
         border-left: 10px solid transparent;
         border-right: 10px solid transparent;
         border-top: 20px solid black;
@@ -105,7 +110,7 @@
         font-size: 0.7em;
     }
 
-    .cholesterol-section.highlighted::before {
+    .cholesterol-highlighted::before {
         border-left: 10px solid transparent;
         border-right: 10px solid transparent;
         border-top: 20px solid black;
@@ -121,7 +126,7 @@
         font-size: 0.9em;
     }
 
-    .cholesterol-section.highlighted::before {
+    .cholesterol-highlighted::before {
         border-left: 10px solid transparent;
         border-right: 10px solid transparent;
         border-top: 20px solid black;
