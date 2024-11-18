@@ -1,12 +1,156 @@
-/* bmi-indicator.css */
-
-/* กำหนดค่าตัวแปรสำหรับความสูงของแถบ BMI */
+/* กำหนดค่าตัวแปรสำหรับความสูงของแถบ */
 :root {
-    --bmi-bar-height: 100px;
+    --bar-height: 100px;
 }
 
 /* สไตล์สำหรับแถบ BMI */
 .bmi-bar {
+    width: 65%;
+    height: auto;
+    /* ปรับความสูงเป็นอัตโนมัติ */
+    display: flex;
+    align-items: flex-end;
+    overflow: visible;
+    margin-left: 0;
+}
+
+/* สไตล์สำหรับแต่ละส่วนของแถบ */
+.bmi-section {
+    height: var(--bar-height);
+    /* กำหนดความสูงเริ่มต้นของแถบ */
+    box-sizing: border-box;
+    border: 2px solid black;
+    transition: flex 0.3s ease, height 0.3s ease;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    /* จัดเนื้อหาให้อยู่ด้านล่าง */
+    color: white;
+    /* ตั้งค่าสีตัวอักษรเป็นสีขาว */
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.2em;
+    position: relative;
+}
+
+/* สีพื้นหลังสำหรับแต่ละระดับของ BMI */
+.underweight {
+    background-color: #0099FF;
+}
+
+.normal {
+    background-color: green;
+}
+
+.overweight {
+    background-color: yellow;
+    /* ลบหรือคอมเมนต์บรรทัดนี้ */
+    color: black;
+}
+
+.obese {
+    background-color: orange;
+}
+
+.morbidly-obese {
+    background-color: red;
+}
+
+/* สไตล์สำหรับส่วนที่ถูกไฮไลท์ */
+.highlighted {
+    flex: 2;
+    height: calc(var(--bar-height) * 2);
+    /* แถบขยายขึ้น */
+    border: 4px solid lightgreen;
+}
+
+/* สร้างลูกศรในส่วนที่ถูกไฮไลท์ */
+.highlighted::before {
+    content: '';
+    position: absolute;
+    top: 0%;
+    /* วางลูกศรไว้ใต้แถบ */
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 40px solid black;
+    /* เพิ่มความยาวลูกศร */
+}
+/* สไตล์สำหรับหน้าจอขนาดเล็ก */
+@media (max-width: 440px) {
+/*     :root {
+        --bar-height: 60px;
+    }
+ */
+    .bmi-section {
+        font-size: 0.2em;
+    }
+
+    .highlighted::before {
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 20px solid black;
+        /* ปรับความยาวลูกศรสำหรับหน้าจอเล็ก */
+    }
+}
+
+/* สไตล์สำหรับหน้าจอขนาดเล็ก */
+@media (max-width: 560px) {
+/*     :root {
+        --bar-height: 60px;
+    }
+ */
+    .bmi-section {
+        font-size: 0.4em;
+    }
+
+    .highlighted::before {
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 20px solid black;
+        /* ปรับความยาวลูกศรสำหรับหน้าจอเล็ก */
+    }
+}
+/* สไตล์สำหรับหน้าจอขนาดเล็ก */
+@media (max-width: 900px) {
+/*     :root {
+        --bar-height: 100px;
+    } */
+    .bmi-section {
+        font-size: 0.7em;
+    }
+
+    .highlighted::before {
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 20px solid black;
+        /* ปรับความยาวลูกศรสำหรับหน้าจอเล็ก */
+    }
+}/* สไตล์สำหรับหน้าจอขนาดเล็ก */
+@media (max-width: 1200px) {
+/*     :root {
+        --bar-height: 100px;
+    } */
+    .bmi-section {
+        font-size: 0.9em;
+    }
+
+    .highlighted::before {
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 20px solid black;
+        /* ปรับความยาวลูกศรสำหรับหน้าจอเล็ก */
+    }
+}
+เเละ 
+/* สไตล์สำหรับแถบคลอเลสเตอรอล */
+:root {
+    --bar-height: 100px;
+}
+
+.cholesterol-bar {
     width: 65%;
     height: auto;
     display: flex;
@@ -15,12 +159,10 @@
     margin-left: 0;
 }
 
-/* สไตล์สำหรับแต่ละส่วนของแถบ BMI */
-.bmi-section {
-    height: var(--bmi-bar-height);
+.cholesterol-section {
+    height: var(--bar-height);
     box-sizing: border-box;
     border: 2px solid black;
-    transition: flex 0.3s ease, height 0.3s ease;
     flex: 1;
     display: flex;
     justify-content: center;
@@ -31,115 +173,99 @@
     font-size: 1.2em;
     position: relative;
 }
-/* สืบทอด font-size จาก .sbp-section ไปยัง <span> ภายใน */
-.bmi-section span {
-    font-size: inherit;
+
+/* กำหนดสีพื้นหลังสำหรับแต่ละระดับ */
+.cholesterol-section.normal {
+    background-color: green;
+    /* สีเขียว */
 }
 
-/* สีพื้นหลังสำหรับแต่ละระดับของ BMI */
-.bmi-section.underweight {
-    background-color: #0099FF; /* ฟ้า */
+.cholesterol-section.borderline-high {
+    background-color: orange;
+    /* สีส้ม */
 }
 
-.bmi-section.normal {
-    background-color: green; /* เขียว */
+.cholesterol-section.high {
+    background-color: red;
+    /* สีแดง */
 }
 
-.bmi-section.overweight {
-    background-color: yellow; /* เหลือง */
-    color: black;
-}
-
-.bmi-section.obese {
-    background-color: orange; /* ส้ม */
-}
-
-.bmi-section.morbidly-obese {
-    background-color: red; /* แดง */
-}
-
-/* สไตล์สำหรับส่วนที่ถูกไฮไลท์ในแถบ BMI */
-.bmi-highlighted {
+/* สไตล์สำหรับส่วนที่ถูกไฮไลท์ */
+.cholesterol-highlighted {
     flex: 2;
-    height: calc(var(--bmi-bar-height) * 2);
+    height: calc(var(--bar-height) * 2);
     border: 4px solid lightgreen;
 }
 
-/* สร้างลูกศรในส่วนที่ถูกไฮไลท์ */
-.bmi-highlighted::before {
+.cholesterol-highlighted::before {
     content: '';
     position: absolute;
     top: 0%;
+    /* วางลูกศรไว้ใต้แถบ */
     left: 50%;
     transform: translateX(-50%);
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
     border-top: 40px solid black;
 }
-
 /* สไตล์สำหรับหน้าจอขนาดเล็ก */
 @media (max-width: 440px) {
     :root {
-        --bmi-bar-height: 60px;
+        --bar-height: 60px;
     }
 
-    .bmi-section {
+    .cholesterol-section {
         font-size: 0.2em;
     }
 
-    .bmi-highlighted::before {
+    .cholesterol-highlighted::before {
         border-left: 10px solid transparent;
         border-right: 10px solid transparent;
         border-top: 20px solid black;
     }
 }
 
+/* สไตล์สำหรับหน้าจอขนาดเล็ก */
 @media (max-width: 560px) {
     :root {
-        --bmi-bar-height: 60px;
+        --bar-height: 60px;
     }
 
-    .bmi-section {
+    .cholesterol-section {
         font-size: 0.4em;
     }
-    .bmi-bar {
-    width: 45%;
 
-}
-
-    .bmi-highlighted::before {
+    .cholesterol-highlighted::before {
         border-left: 10px solid transparent;
         border-right: 10px solid transparent;
         border-top: 20px solid black;
     }
 }
-
+/* สไตล์สำหรับหน้าจอขนาดเล็ก */
 @media (max-width: 900px) {
     :root {
-        --bmi-bar-height: 100px;
+        --bar-height: 100px;
     }
-
-    .bmi-section {
+        .cholesterol-section {
         font-size: 0.7em;
     }
 
-    .bmi-highlighted::before {
+    .cholesterol-highlighted::before {
         border-left: 10px solid transparent;
         border-right: 10px solid transparent;
         border-top: 20px solid black;
     }
 }
-
+/* สไตล์สำหรับหน้าจอขนาดเล็ก */
 @media (max-width: 1200px) {
     :root {
-        --bmi-bar-height: 100px;
+        --bar-height: 100px;
     }
-
-    .bmi-section {
+        .cholesterol-section {
         font-size: 0.9em;
     }
 
-    .bmi-highlighted::before {
+    .cholesterol-highlighted::before {
         border-left: 10px solid transparent;
         border-right: 10px solid transparent;
         border-top: 20px solid black;
