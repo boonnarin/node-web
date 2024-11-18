@@ -1,6 +1,8 @@
-/* กำหนดค่าตัวแปรสำหรับความสูงของแถบ */
+/* sbp-indicator.css */
+
+/* กำหนดค่าตัวแปรสำหรับความสูงของแถบ SBP */
 :root {
-    --bar-height: 100px;
+    --sbp-bar-height: 100px;
 }
 
 /* สไตล์สำหรับแถบ SBP */
@@ -15,7 +17,7 @@
 
 /* สไตล์สำหรับแต่ละส่วนของแถบ SBP */
 .sbp-section {
-    height: var(--bar-height);
+    height: var(--sbp-bar-height);
     box-sizing: border-box;
     border: 2px solid black;
     transition: flex 0.3s ease, height 0.3s ease;
@@ -31,41 +33,35 @@
 }
 
 /* สีพื้นหลังสำหรับแต่ละระดับของ SBP */
-.optimal {
-    background-color: #0099FF;
-    /* ฟ้า */
+.sbp-section.optimal {
+    background-color: #0099FF; /* ฟ้า */
 }
 
-.normal {
-    background-color: green;
-    /* เขียว */
+.sbp-section.normal {
+    background-color: green; /* เขียว */
 }
 
-.high-normal {
-    background-color: yellow;
-    /* เหลือง */
+.sbp-section.high-normal {
+    background-color: yellow; /* เหลือง */
     color: black;
 }
 
-.hypertension1 {
-    background-color: orange;
-    /* ส้ม */
+.sbp-section.hypertension1 {
+    background-color: orange; /* ส้ม */
 }
 
-.hypertension2 {
-    background-color: red;
-    /* แดง */
+.sbp-section.hypertension2 {
+    background-color: red; /* แดง */
 }
 
-.crisis {
-    background-color: #b22222;
-    /* แดงเลือดหมู */
+.sbp-section.crisis {
+    background-color: #b22222; /* แดงเลือดหมู */
 }
 
 /* สไตล์สำหรับส่วนที่ถูกไฮไลท์ใน SBP */
 .sbp-highlighted {
     flex: 2;
-    height: calc(var(--bar-height) * 2);
+    height: calc(var(--sbp-bar-height) * 2);
     border: 4px solid lightgreen;
 }
 
@@ -74,7 +70,6 @@
     content: '';
     position: absolute;
     top: 0%;
-    /* วางลูกศรไว้ใต้แถบ */
     left: 50%;
     transform: translateX(-50%);
     border-left: 15px solid transparent;
@@ -84,10 +79,10 @@
 
 /* สไตล์สำหรับหน้าจอขนาดเล็ก */
 @media (max-width: 440px) {
-/*     :root {
-        --bar-height: 60px;
+    :root {
+        --sbp-bar-height: 60px;
     }
- */
+
     .sbp-section {
         font-size: 0.2em;
     }
@@ -98,12 +93,13 @@
         border-top: 20px solid black;
     }
 }
+
 /* สไตล์สำหรับหน้าจอขนาดเล็ก */
 @media (max-width: 560px) {
-/*     :root {
-        --bar-height: 60px;
+    :root {
+        --sbp-bar-height: 60px;
     }
- */
+
     .sbp-section {
         font-size: 0.4em;
     }
@@ -114,10 +110,11 @@
         border-top: 20px solid black;
     }
 }
-/* สไตล์สำหรับหน้าจอขนาดเล็ก */
+
+/* สไตล์สำหรับหน้าจอขนาดกลาง */
 @media (max-width: 900px) {
     :root {
-        --bar-height: 100px;
+        --sbp-bar-height: 100px;
     }
 
     .sbp-section {
@@ -130,10 +127,11 @@
         border-top: 20px solid black;
     }
 }
-/* สไตล์สำหรับหน้าจอขนาดเล็ก */
+
+/* สไตล์สำหรับหน้าจอขนาดใหญ่ */
 @media (max-width: 1200px) {
     :root {
-        --bar-height: 100px;
+        --sbp-bar-height: 100px;
     }
 
     .sbp-section {
