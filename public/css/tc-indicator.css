@@ -81,7 +81,7 @@
 /* สไตล์สำหรับหน้าจอขนาดเล็ก */
 @media (max-width: 900px) {
     :root {
-        --bar-height: 110px;
+        --bar-height: 100px;
     }
         .cholesterol-section {
         font-size: 0.7em;
@@ -96,7 +96,7 @@
 /* สไตล์สำหรับหน้าจอขนาดเล็ก */
 @media (max-width: 1200px) {
     :root {
-        --bar-height: 110px;
+        --bar-height: 100px;
     }
         .cholesterol-section {
         font-size: 0.9em;
