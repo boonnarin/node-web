@@ -1,8 +1,8 @@
-/* กำหนดค่าตัวแปรสำหรับความสูงของแถบ */
+/* /* กำหนดค่าตัวแปรสำหรับความสูงของแถบ */
 :root {
     --bar-height: 110px;
 }
-
+ */
 /* สไตล์สำหรับแถบ BMI */
 .bmi-bar {
     width: 65%;
@@ -81,10 +81,10 @@
 
 /* สไตล์สำหรับหน้าจอขนาดเล็ก */
 @media (max-width: 560px) {
-    :root {
+/*     :root {
         --bar-height: 60px;
     }
-
+ */
     .bmi-section {
         font-size: 0.4em;
     }
@@ -98,9 +98,9 @@
 }
 /* สไตล์สำหรับหน้าจอขนาดเล็ก */
 @media (max-width: 900px) {
-    :root {
+/*     :root {
         --bar-height: 110px;
-    }
+    } */
     .bmi-section {
         font-size: 0.7em;
     }
