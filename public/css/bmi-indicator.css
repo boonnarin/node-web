@@ -96,3 +96,19 @@
         /* ปรับความยาวลูกศรสำหรับหน้าจอเล็ก */
     }
 }
+/* สไตล์สำหรับหน้าจอขนาดเล็ก */
+@media (max-width: 900px) {
+    :root {
+        --bar-height: 110px;
+    }
+    .bmi-section {
+        font-size: 0.4em;
+    }
+
+    .highlighted::before {
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 20px solid black;
+        /* ปรับความยาวลูกศรสำหรับหน้าจอเล็ก */
+    }
+}
