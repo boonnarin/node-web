@@ -31,6 +31,10 @@
     font-size: 1.2em;
     position: relative;
 }
+/* สืบทอด font-size จาก .sbp-section ไปยัง <span> ภายใน */
+.bmi-section span {
+    font-size: inherit;
+}
 
 /* สีพื้นหลังสำหรับแต่ละระดับของ BMI */
 .bmi-section.underweight {
