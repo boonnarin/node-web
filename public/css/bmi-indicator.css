@@ -34,35 +34,35 @@
 
 /* สีพื้นหลังสำหรับแต่ละระดับของ BMI */
 .bmi-section.underweight {
-    background-color: #0099FF;
+    background-color: #0099FF; /* ฟ้า */
 }
 
 .bmi-section.normal {
-    background-color: green;
+    background-color: green; /* เขียว */
 }
 
 .bmi-section.overweight {
-    background-color: yellow;
+    background-color: yellow; /* เหลือง */
     color: black;
 }
 
 .bmi-section.obese {
-    background-color: orange;
+    background-color: orange; /* ส้ม */
 }
 
 .bmi-section.morbidly-obese {
-    background-color: red;
+    background-color: red; /* แดง */
 }
 
-/* สไตล์สำหรับส่วนที่ถูกไฮไลท์ */
-.bmi-section.highlighted {
+/* สไตล์สำหรับส่วนที่ถูกไฮไลท์ในแถบ BMI */
+.bmi-highlighted {
     flex: 2;
     height: calc(var(--bmi-bar-height) * 2);
     border: 4px solid lightgreen;
 }
 
 /* สร้างลูกศรในส่วนที่ถูกไฮไลท์ */
-.bmi-section.highlighted::before {
+.bmi-highlighted::before {
     content: '';
     position: absolute;
     top: 0%;
@@ -73,7 +73,7 @@
     border-top: 40px solid black;
 }
 
-/* สไตล์สำหรับหน้าจอขนาดเล็ก แถบ BMI */
+/* สไตล์สำหรับหน้าจอขนาดเล็ก */
 @media (max-width: 440px) {
     :root {
         --bmi-bar-height: 60px;
@@ -83,7 +83,7 @@
         font-size: 0.2em;
     }
 
-    .bmi-section.highlighted::before {
+    .bmi-highlighted::before {
         border-left: 10px solid transparent;
         border-right: 10px solid transparent;
         border-top: 20px solid black;
@@ -98,8 +98,12 @@
     .bmi-section {
         font-size: 0.4em;
     }
+    .bmi-bar {
+    width: 45%;
 
-    .bmi-section.highlighted::before {
+}
+
+    .bmi-highlighted::before {
         border-left: 10px solid transparent;
         border-right: 10px solid transparent;
         border-top: 20px solid black;
@@ -115,7 +119,7 @@
         font-size: 0.7em;
     }
 
-    .bmi-section.highlighted::before {
+    .bmi-highlighted::before {
         border-left: 10px solid transparent;
         border-right: 10px solid transparent;
         border-top: 20px solid black;
@@ -131,7 +135,7 @@
         font-size: 0.9em;
     }
 
-    .bmi-section.highlighted::before {
+    .bmi-highlighted::before {
         border-left: 10px solid transparent;
         border-right: 10px solid transparent;
         border-top: 20px solid black;
