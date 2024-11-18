@@ -1,6 +1,6 @@
 /* กำหนดค่าตัวแปรสำหรับความสูงของแถบ */
 :root {
-    --bar-height: 100px;
+    --bar-height: 110px;
 }
 
 /* สไตล์สำหรับแถบ BMI */
@@ -78,30 +78,13 @@
     border-top: 40px solid black;
     /* เพิ่มความยาวลูกศร */
 }
-/* สไตล์สำหรับหน้าจอขนาดเล็ก */
-@media (max-width: 440px) {
-/*     :root {
-        --bar-height: 60px;
-    }
- */
-    .bmi-section {
-        font-size: 0.2em;
-    }
-
-    .highlighted::before {
-        border-left: 10px solid transparent;
-        border-right: 10px solid transparent;
-        border-top: 20px solid black;
-        /* ปรับความยาวลูกศรสำหรับหน้าจอเล็ก */
-    }
-}
 
 /* สไตล์สำหรับหน้าจอขนาดเล็ก */
-@media (max-width: 560px) {
-/*     :root {
+@media (max-width: 400px) {
+    :root {
         --bar-height: 60px;
     }
- */
+
     .bmi-section {
         font-size: 0.4em;
     }
@@ -111,163 +94,5 @@
         border-right: 10px solid transparent;
         border-top: 20px solid black;
         /* ปรับความยาวลูกศรสำหรับหน้าจอเล็ก */
-    }
-}
-/* สไตล์สำหรับหน้าจอขนาดเล็ก */
-@media (max-width: 900px) {
-/*     :root {
-        --bar-height: 100px;
-    } */
-    .bmi-section {
-        font-size: 0.7em;
-    }
-
-    .highlighted::before {
-        border-left: 10px solid transparent;
-        border-right: 10px solid transparent;
-        border-top: 20px solid black;
-        /* ปรับความยาวลูกศรสำหรับหน้าจอเล็ก */
-    }
-}/* สไตล์สำหรับหน้าจอขนาดเล็ก */
-@media (max-width: 1200px) {
-/*     :root {
-        --bar-height: 100px;
-    } */
-    .bmi-section {
-        font-size: 0.9em;
-    }
-
-    .highlighted::before {
-        border-left: 10px solid transparent;
-        border-right: 10px solid transparent;
-        border-top: 20px solid black;
-        /* ปรับความยาวลูกศรสำหรับหน้าจอเล็ก */
-    }
-}
-เเละ 
-/* สไตล์สำหรับแถบคลอเลสเตอรอล */
-:root {
-    --bar-height: 100px;
-}
-
-.cholesterol-bar {
-    width: 65%;
-    height: auto;
-    display: flex;
-    align-items: flex-end;
-    overflow: visible;
-    margin-left: 0;
-}
-
-.cholesterol-section {
-    height: var(--bar-height);
-    box-sizing: border-box;
-    border: 2px solid black;
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    color: white;
-    font-weight: bold;
-    text-align: center;
-    font-size: 1.2em;
-    position: relative;
-}
-
-/* กำหนดสีพื้นหลังสำหรับแต่ละระดับ */
-.cholesterol-section.normal {
-    background-color: green;
-    /* สีเขียว */
-}
-
-.cholesterol-section.borderline-high {
-    background-color: orange;
-    /* สีส้ม */
-}
-
-.cholesterol-section.high {
-    background-color: red;
-    /* สีแดง */
-}
-
-/* สไตล์สำหรับส่วนที่ถูกไฮไลท์ */
-.cholesterol-highlighted {
-    flex: 2;
-    height: calc(var(--bar-height) * 2);
-    border: 4px solid lightgreen;
-}
-
-.cholesterol-highlighted::before {
-    content: '';
-    position: absolute;
-    top: 0%;
-    /* วางลูกศรไว้ใต้แถบ */
-    left: 50%;
-    transform: translateX(-50%);
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-top: 40px solid black;
-}
-/* สไตล์สำหรับหน้าจอขนาดเล็ก */
-@media (max-width: 440px) {
-    :root {
-        --bar-height: 60px;
-    }
-
-    .cholesterol-section {
-        font-size: 0.2em;
-    }
-
-    .cholesterol-highlighted::before {
-        border-left: 10px solid transparent;
-        border-right: 10px solid transparent;
-        border-top: 20px solid black;
-    }
-}
-
-/* สไตล์สำหรับหน้าจอขนาดเล็ก */
-@media (max-width: 560px) {
-    :root {
-        --bar-height: 60px;
-    }
-
-    .cholesterol-section {
-        font-size: 0.4em;
-    }
-
-    .cholesterol-highlighted::before {
-        border-left: 10px solid transparent;
-        border-right: 10px solid transparent;
-        border-top: 20px solid black;
-    }
-}
-/* สไตล์สำหรับหน้าจอขนาดเล็ก */
-@media (max-width: 900px) {
-    :root {
-        --bar-height: 100px;
-    }
-        .cholesterol-section {
-        font-size: 0.7em;
-    }
-
-    .cholesterol-highlighted::before {
-        border-left: 10px solid transparent;
-        border-right: 10px solid transparent;
-        border-top: 20px solid black;
-    }
-}
-/* สไตล์สำหรับหน้าจอขนาดเล็ก */
-@media (max-width: 1200px) {
-    :root {
-        --bar-height: 100px;
-    }
-        .cholesterol-section {
-        font-size: 0.9em;
-    }
-
-    .cholesterol-highlighted::before {
-        border-left: 10px solid transparent;
-        border-right: 10px solid transparent;
-        border-top: 20px solid black;
     }
 }
