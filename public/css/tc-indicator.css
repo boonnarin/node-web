@@ -59,7 +59,7 @@
 }
 
 /* สไตล์สำหรับหน้าจอขนาดเล็ก */
-@media (max-width: 600px) {
+@media (max-width: 800px) {
     .cholesterol-section {
         font-size: 0.8em;
     }
