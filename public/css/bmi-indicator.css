@@ -1,23 +1,23 @@
-/* กำหนดค่าตัวแปรสำหรับความสูงของแถบ */
+/* bmi-indicator.css */
+
+/* กำหนดค่าตัวแปรสำหรับความสูงของแถบ BMI */
 :root {
-    --bar-height: 100px;
+    --bmi-bar-height: 100px;
 }
 
 /* สไตล์สำหรับแถบ BMI */
 .bmi-bar {
     width: 65%;
     height: auto;
-    /* ปรับความสูงเป็นอัตโนมัติ */
     display: flex;
     align-items: flex-end;
     overflow: visible;
     margin-left: 0;
 }
 
-/* สไตล์สำหรับแต่ละส่วนของแถบ */
+/* สไตล์สำหรับแต่ละส่วนของแถบ BMI */
 .bmi-section {
-    height: var(--bar-height);
-    /* กำหนดความสูงเริ่มต้นของแถบ */
+    height: var(--bmi-bar-height);
     box-sizing: border-box;
     border: 2px solid black;
     transition: flex 0.3s ease, height 0.3s ease;
@@ -25,9 +25,7 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    /* จัดเนื้อหาให้อยู่ด้านล่าง */
     color: white;
-    /* ตั้งค่าสีตัวอักษรเป็นสีขาว */
     font-weight: bold;
     text-align: center;
     font-size: 1.2em;
@@ -35,113 +33,107 @@
 }
 
 /* สีพื้นหลังสำหรับแต่ละระดับของ BMI */
-.underweight {
+.bmi-section.underweight {
     background-color: #0099FF;
 }
 
-.normal {
+.bmi-section.normal {
     background-color: green;
 }
 
-.overweight {
+.bmi-section.overweight {
     background-color: yellow;
-    /* ลบหรือคอมเมนต์บรรทัดนี้ */
     color: black;
 }
 
-.obese {
+.bmi-section.obese {
     background-color: orange;
 }
 
-.morbidly-obese {
+.bmi-section.morbidly-obese {
     background-color: red;
 }
 
 /* สไตล์สำหรับส่วนที่ถูกไฮไลท์ */
-.highlighted {
+.bmi-section.highlighted {
     flex: 2;
-    height: calc(var(--bar-height) * 2);
-    /* แถบขยายขึ้น */
+    height: calc(var(--bmi-bar-height) * 2);
     border: 4px solid lightgreen;
 }
 
 /* สร้างลูกศรในส่วนที่ถูกไฮไลท์ */
-.highlighted::before {
+.bmi-section.highlighted::before {
     content: '';
     position: absolute;
     top: 0%;
-    /* วางลูกศรไว้ใต้แถบ */
     left: 50%;
     transform: translateX(-50%);
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
     border-top: 40px solid black;
-    /* เพิ่มความยาวลูกศร */
 }
-/* สไตล์สำหรับหน้าจอขนาดเล็ก */
+
+/* สไตล์สำหรับหน้าจอขนาดเล็ก แถบ BMI */
 @media (max-width: 440px) {
-/*     :root {
-        --bar-height: 60px;
+    :root {
+        --bmi-bar-height: 60px;
     }
- */
+
     .bmi-section {
         font-size: 0.2em;
     }
 
-    .highlighted::before {
+    .bmi-section.highlighted::before {
         border-left: 10px solid transparent;
         border-right: 10px solid transparent;
         border-top: 20px solid black;
-        /* ปรับความยาวลูกศรสำหรับหน้าจอเล็ก */
     }
 }
 
-/* สไตล์สำหรับหน้าจอขนาดเล็ก */
 @media (max-width: 560px) {
-/*     :root {
-        --bar-height: 60px;
+    :root {
+        --bmi-bar-height: 60px;
     }
- */
+
     .bmi-section {
         font-size: 0.4em;
     }
 
-    .highlighted::before {
+    .bmi-section.highlighted::before {
         border-left: 10px solid transparent;
         border-right: 10px solid transparent;
         border-top: 20px solid black;
-        /* ปรับความยาวลูกศรสำหรับหน้าจอเล็ก */
     }
 }
-/* สไตล์สำหรับหน้าจอขนาดเล็ก */
+
 @media (max-width: 900px) {
-/*     :root {
-        --bar-height: 100px;
-    } */
+    :root {
+        --bmi-bar-height: 100px;
+    }
+
     .bmi-section {
         font-size: 0.7em;
     }
 
-    .highlighted::before {
+    .bmi-section.highlighted::before {
         border-left: 10px solid transparent;
         border-right: 10px solid transparent;
         border-top: 20px solid black;
-        /* ปรับความยาวลูกศรสำหรับหน้าจอเล็ก */
     }
-}/* สไตล์สำหรับหน้าจอขนาดเล็ก */
+}
+
 @media (max-width: 1200px) {
-/*     :root {
-        --bar-height: 100px;
-    } */
+    :root {
+        --bmi-bar-height: 100px;
+    }
+
     .bmi-section {
         font-size: 0.9em;
     }
 
-    .highlighted::before {
+    .bmi-section.highlighted::before {
         border-left: 10px solid transparent;
         border-right: 10px solid transparent;
         border-top: 20px solid black;
-        /* ปรับความยาวลูกศรสำหรับหน้าจอเล็ก */
     }
 }
-
