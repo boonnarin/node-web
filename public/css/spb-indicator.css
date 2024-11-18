@@ -109,6 +109,10 @@
         border-right: 10px solid transparent;
         border-top: 20px solid black;
     }
+    .sbp-bar {
+    width: 45%;
+
+}
 }
 
 /* สไตล์สำหรับหน้าจอขนาดกลาง */
