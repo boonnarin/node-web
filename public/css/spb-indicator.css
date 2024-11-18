@@ -83,7 +83,7 @@
 }
 
 /* สไตล์สำหรับหน้าจอขนาดเล็ก */
-@media (max-width: 600px) {
+@media (max-width: 800px) {
     :root {
         --bar-height: 60px;
     }
