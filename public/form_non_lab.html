@@ -111,7 +111,7 @@
                 <button>&#8942;</button> <!-- Vertical ellipsis icon -->
             </div>
 
-            <a href="/login" class="login-button" id="loginbutton">Sign In</a>
+            <a href="/login.html" class="login-button" id="loginbutton">Sign In</a>
         </div>
     </header>
 
@@ -207,6 +207,21 @@
                 <button type="button" class="btn btn-success" id="callab" onclick="nonlab()"
                     style="float: right;">แสดงผลการประเมินความเสี่ยง</button>
             </div>
+
+             <div class="text-start text-muted mb-3">
+                จำนวนผู้เข้าใช้งาน: <span id="visit-counter">กำลังโหลด...</span> ครั้ง
+            </div>
+
+            <script>
+                fetch('/visit?page=form_lab')
+                    .then(res => res.json())
+                    .then(data => {
+                        document.getElementById('visit-counter').textContent = data.totalVisits.toLocaleString();
+                    })
+                    .catch(err => {
+                        document.getElementById('visit-counter').textContent = 'เกิดข้อผิดพลาด';
+                    });
+            </script>
 
         </form>
     </div>
